@@ -1,5 +1,34 @@
 ﻿<ion-view view-title="Familiez">
     <ion-content>
-            Test overzicht personen
+        <ion-list>
+            <ion-item ng-repeat="todo in todos">
+                <table style="width:100%">
+                    <tr>
+                        <td style="width:70%">
+                            <b>{{todo.Person}}</b>
+                        </td>
+                        <td style="width:15%" rowspan="2">
+                            <div>
+                                <!--                                               <ons-toolbar-button modifier="quiet"  ng-click="MyDataPageNavigator.pushPage('Detail.html', {Person: todo.PersonID})"><ons-icon icon="fa-wrench"></ons-icon></ons-toolbar-button> -->
+                                <ons-toolbar-button modifier="quiet" ng-click="MyDataPageNavigator.pushPage('Detail.html', {Person: todo.PersonID})"><ons-icon icon="fa-wrench"></ons-icon></ons-toolbar-button>
+                            </div>
+                        </td>
+                        <td style="width:15%" rowspan="2">
+                            <div>
+                                <!--                                                <ons-toolbar-button modifier="quiet" ng-click="MyDataPageNavigator.pushPage('Kinderen.html', {Person: todo.PersonID})"><ons-icon icon="fa-group"></ons-icon></ons-toolbar-button> -->
+                                <ons-toolbar-button modifier="quiet" ng-click="MyDataPageNavigator.pushPage('Kinderen.html', {Person: todo.PersonID})"><ons-icon icon="fa-group"></ons-icon></ons-toolbar-button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width:70%">
+                            <div>
+                                (Partner: {{todo.Partner}})
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </ion-item>
+        </ion-list>
     </ion-content>
 </ion-view>
