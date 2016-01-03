@@ -55,9 +55,29 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
           'tab-overzicht': {
               templateUrl: 'templates/tab-overzicht.html',
               controller: 'OverzichtCtrl'
+              }
           }
-      }
-  })
+      })
+
+    .state('tab.children', {
+        url: '/children/{PersonID:\\w+}',
+        views: {
+            'tab-overzicht': {
+                templateUrl: 'templates/tab-children.html',
+                controller: 'ChildrenCtrl'
+            }
+        }
+    })
+
+     .state('tab.edit', {
+         url: '/edit/{PersonID:\\w+}',
+         views: {
+             'tab-overzicht': {
+                 templateUrl: 'templates/tab-edit.html',
+                 controller: 'EditCtrl'
+             }
+         }
+     })
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/tab/overzicht');

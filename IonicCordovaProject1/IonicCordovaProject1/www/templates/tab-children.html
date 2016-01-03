@@ -1,7 +1,31 @@
 ﻿<ion-view view-title="Familiez">
     <ion-content>
-
-        Kinderen:
-
+        <div class="card padding" ng-repeat="child in children">
+            <table style="width:100%">
+                <tr>
+                    <td style="width:70%">
+                        <b>{{child.Kind}}</b>
+                    </td>
+                    <td style="width:15%" rowspan="2">
+                        <a class="button button-icon icon ion-ios-people" ui-sref="tab.children({PersonID: child.KindId})">
+                        </a>
+                    </td>
+                    <td style="width:15%" rowspan="2">
+                        <a class="button button-icon icon ion-settings" ui-sref="tab.edit({PersonID: child.KindId})">
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width:70%">
+                        <div>
+                            (Partner: {{child.Partner}})
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
     </ion-content>
+    <ion-footer-bar class="bar-positive">
+        <button class="button button-icon ion-arrow-left-a" ng-click="$ionicGoBack()"></button>
+    </ion-footer-bar>
 </ion-view>
